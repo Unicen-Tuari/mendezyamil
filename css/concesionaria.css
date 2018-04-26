@@ -1,73 +1,18 @@
-.contenedores {
-  border: 1px solid black;
-  margin-left: 30px;
-  margin-right: 30px;
+/* reset de margenes */
+*{
+  margin: 0;
+  padding: 0;
 }
 
-.contenedores header{
-    text-align: center;
-}
-
-.contenedores img {
-  width: 70%;
-  height: 70%;
-}
-
-.cuerpo{
-
-    background: #000000 url("Imagenes/fondo.jpg");
-}
-
-.box{
-  display: block;
-  background: #131212;
-  text-align: center;
-  border-radius: 8px;
-  margin: 0 auto;
-  padding: 20px;
-  width: 50%;
-  margin-bottom: 5%;
-}
-
-.box img{
-  width: 100%;
-  height: 50%;
-}
-
-h1{
-  color: white;
-  text-align: center;
-  font-family: fantasy;
-  margin-top: 5%;
-  margin-bottom: 5%;
-}
-
-.contenedores footer{
-  background-color: violet;
-}
-
-.logomendez {
-    width: 70%;
-}
-
-.menuprincipal{
-  background-color: #090909;
-  text-align: center;
-  border-top: 5px solid #088A08;
-  border-bottom: 5px solid #088A08;
-  margin-bottom: 10px;
-}
-
-.menuprincipal ul a:hover{
-    color: black;
-    background: white;
+body {
+  background-color: #0B0B0B;
 }
 
 a{
   text-decoration: none;
   color: white;
   font-family: verdana;
-  font-size: 30px;
+  font-size: 20px;
   padding-right: 5px;
   padding-bottom: 5px;
 }
@@ -76,4 +21,119 @@ ul{
   margin-top: 1px;
   margin-bottom: 10px;
   padding-top: 5px;
+}
+
+.contenedores {
+  margin: 0 3%;
+}
+
+.contenedores header{
+  text-align: center;
+  /* background-color: #6E6E6E; */
+  background: radial-gradient(circle, #D8D8D8, #0B0B0B);
+}
+
+.contenedores img {
+  width: 70%;
+  height: 70%;
+}
+
+.contenedores header nav{
+  background-color: #090909;
+  text-align: center;
+  border-top: 5px solid #088A08;
+  border-bottom: 5px solid #088A08;
+}
+
+.contenedores header nav ul a:hover{
+    color: black;
+    background: white;
+}
+
+main{
+  /* background: radial-gradient(circle, #111, #0B0B0B); */
+  background-color: #0B0B0B;
+    /* background: #000000 url("Imagenes/fondo.jpg"); */
+}
+
+/* .linkmenu {
+  color: white;
+  text-align: center;
+  font-family: verdana;
+  padding-top: 5%;
+  padding-bottom: 5%;
+} */
+
+.box{
+  display: block;
+  text-align: center;
+  border-radius: 8px;
+  margin: 0 auto 3% auto;
+  padding: 20px;
+  width: 50%;
+  border-left: 6px solid #088A08;
+  background-color: black;
+}
+
+.box img{
+  width: 100%;
+  height: 50%;
+}
+
+footer{
+  background: #004601;
+  border-radius: 8px;
+  margin: 3% auto;
+  padding: 2%;
+  width: 70%;
+}
+
+/* form{
+  display: inline-block;
+} */
+
+footer label{
+  color: white;
+  font-size: 15px;
+  font-family: verdana;
+  padding-right: 1%;
+}
+
+#virtus, #cronos, #peugeot{
+    border-bottom: 4px solid green;
+}
+
+#nombre{
+  margin-bottom: 2%;
+  margin-right: 2%;
+  width: 30%;
+}
+
+#mail{
+  width: 40%;
+}
+
+#mensaje{
+  border-radius: 3px;
+  width: 100%;
+}
+
+#boton{
+  margin: 8px 0;
+  color: white;
+  text-align: center;
+  font-size: 20px;
+  width: 100%;
+  border-radius: 8px;
+  background-color: #131212;
+  cursor: pointer;
+  border-color: black;
+}
+
+#copy {
+  color: #BDBDBD;
+  font-size: 10px;
+  text-align: center;
+  padding: 0 30%;
+  margin-bottom: 3%;
 }
