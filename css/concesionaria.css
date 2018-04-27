@@ -137,3 +137,47 @@ footer label{
   padding: 0 30%;
   margin-bottom: 3%;
 }
+
+/* HTML 1 */
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 70%;
+    margin: 5% auto 5% auto;
+    color: white;
+}
+
+td, #text-tr th {
+  border: 3px solid #1C1C1C;
+  text-align: center;
+  padding: 1% 1%;
+  background-color: black;
+}
+
+td ul{
+  color: #BDBDBD;
+  margin: 0;
+  background-color: black;
+}
+
+td ul li{
+  padding-bottom: 10px;
+  margin-left: 25px;
+  text-align: left;
+}
+
+#text-tr{
+  font-size: 20px;
+}
+
+#img-tr {
+  border-top: 3px solid #1C1C1C;
+}
+
+#img-tr th img{
+  border: none;
+  margin: 4% auto 3% auto;
+  width: 90%;
+  height: 110%;
+}
