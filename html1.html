@@ -12,8 +12,8 @@
         <nav>
           <ul>
             <a href="index.html">Inicio</a>
-            <a href="#">Ofertas</a>
-            <a href="#">Financiación</a>
+            <a href="html1.html">Ofertas</a>
+            <a href="html2.html">Financiación</a>
             <a href="#footer">Contacto</a>
           </ul>
         </nav>
@@ -23,7 +23,7 @@
           <thead>
             <tr id="img-tr">
               <th>
-                <img class="img-table" src="Imagenes/trendline.jpg" alt="trendline">                  
+                <img class="img-table" src="Imagenes/trendline.jpg" alt="trendline">
               </th>
               <th>
                 <img class="img-table" src="Imagenes/comfortline.jpg" alt="comfotline">
@@ -98,14 +98,16 @@
       <aside class="">
 
       </aside>
-      <footer>
+      <footer id="footer">
         <form class="formulario" action="index.html" method="post">
           <label for="nombre">Nombre</label>
           <input id="nombre" type="text" name="nombre" placeholder="Nombre">
           <label for="mail">Email</label>
           <input id="mail" type="text" name="mail" placeholder="example@gmail.com">
           <textarea id="mensaje" name="mensaje" rows="8" cols="80" placeholder="Mensaje.."></textarea>
-          <input id="boton" type="submit" name="enviar" value="Enviar">
+          <div class="buttonHolder">
+            <input id="boton" type="submit" name="enviar" value="Enviar">
+          </div>
         </form>
       </footer>
       <p id="copy"> Copyright - TODOS LOS DERECHOS RESERVADOS. La información contenidas en este site, el logotipo y las marcas son propiedad de "Mendez Automotores" y/o de susrespectivos titulares.</p>
