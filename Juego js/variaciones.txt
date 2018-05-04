@@ -1,0 +1,12 @@
+Variaciones de selección:
+seleccionandolo de una lista seleccionable.
+
+Cantidad de casilleros:
+5 casilleros.
+
+Variaciones generación tablero:
+Hay una marca B que es una bomba y hace terminar la partida automáticamente.
+Cada casilla tiene probabilidades 0.5 de ser marca, 0.1 de ser bomba y 0.4 de estar libre.
+
+Otras
+Cada partida se inserta en una tabla con las columnas “número de partida” y “resultado” (cantidad de aciertos/cantidad de errores).
