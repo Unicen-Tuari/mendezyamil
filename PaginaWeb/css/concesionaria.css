@@ -156,7 +156,7 @@ footer label{
 
 table {
     font-family: arial, sans-serif;
-    border-collapse: collapse;
+    /* border-collapse: collapse; */
     width: 70%;
     margin: 5% auto;
     color: white;
