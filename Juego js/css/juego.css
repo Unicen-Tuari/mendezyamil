@@ -1,0 +1,19 @@
+table {
+  margin: 0 auto;
+}
+
+th{
+  font-size: 40px;
+}
+
+td {
+  width: 200px;
+}
+
+td img {
+  width: 100%;
+}
+
+/* main{
+  visibility:hidden;
+} */
