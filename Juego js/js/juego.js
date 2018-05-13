@@ -2,20 +2,27 @@
 let resultado = ['vacio','vacio','vacio','vacio','vacio'];
 let contadorAcierto = 0;
 let contadorError = 0;
+let comienzoJuego = false;
+let cantidadMarcas = 0;
+let cantidadVacio = 5;
 let comienzo = document.getElementById('btncomienzo');
 comienzo.addEventListener('click', function(e){
+  comienzoJuego = true;
   for (let i = 0; i < 5; i++) {
     let carta = document.getElementById(i);
     let resultadoRandom=aleatorio(0.5); //aca se considera el 100% entre la marca y el error
     if (resultadoRandom===1){ //en caso de que sea error va al else y vuelve a considerar un 100% entre el error y la bomba
       carta.src = "image/marca.png";
       resultado[i] = 'marca';
+      cantidadMarcas++;
+      cantidadVacio--;
     }
     else{
       resultadoRandom=aleatorio(0.2);
       if (resultadoRandom===1){
         carta.src = "image/bomba.png";
         resultado[i] = 'bomba';
+        cantidadVacio--;
       }
     }
   }
@@ -49,39 +56,73 @@ function aleatorio(chance){
 
 let eleccion = document.getElementById('seleccion');
 eleccion.addEventListener('change', function(e){
-  if(eleccion.value != ""){
+  if(eleccion.value != "" && comienzoJuego){
     let carta = document.getElementById(eleccion.value); //trae el valor de la eleccion en el select, guardar en una variable
     let valorCarta = resultado[eleccion.value]; // tiene numero de la carta
     carta.src = "image/"+valorCarta+".png";
-    let contadorAcierto = 0;
-    let contadorError = 0;
-    contadorFinal(valorCarta);
+    contadorResultado(valorCarta);
   }
 });
 
-function contadorFinal(valor){
+function contadorResultado(valor){
   if(valor==='marca'){
     contadorAcierto += 1;
     let txtAcierto = document.getElementById('acierto');
     txtAcierto.innerHTML = "Acierto: " + contadorAcierto;
+    if(contadorAcierto===cantidadMarcas){
+      let txtResultado = document.getElementById('resultado');
+      txtResultado.innerHTML = "GANASTE";
+      setTimeout(function(){
+        reiniciar();
+      }, 1000);
+    }
   }
   else{
     if(valor==='vacio'){
       contadorError += 1;
       let txtError = document.getElementById('error');
       txtError.innerHTML = "Errores: " + contadorError;
+      if(contadorError===cantidadVacio){
+        let txtResultado = document.getElementById('resultado');
+        txtResultado.innerHTML = "PERDISTE";
+        setTimeout(function(){
+          reiniciar();
+        }, 1000);
+      }
     }
     else {
       if(valor==='bomba'){
-        let resultado = ['vacio','vacio','vacio','vacio','vacio'];
-        let contadorAcierto = 0;
-        let contadorError = 0;
-
+        let bombas = contadorError+1; //variable para mostrar un error mas al seleccionar un bomba, sin aumentar el contadorError y no romper la logica
+        let txtError = document.getElementById('error');
+        txtError.innerHTML = "Errores: " + bombas;
         let txtResultado = document.getElementById('resultado');
         txtResultado.innerHTML = "PERDISTE";
+        setTimeout(function(){
+          reiniciar();
+        }, 1000);
       }
     }
   }
+}
+
+function reiniciar(){
+  comienzoJuego = false;
+  resultado = ['vacio','vacio','vacio','vacio','vacio'];
+  contadorAcierto = 0;
+  contadorError = 0;
+  cantidadMarcas = 0;
+  cantidadVacio = 5;
+  for (let i = 0; i < 5; i++) {
+    let carta = document.getElementById(i);
+    carta.src = "image/dorso.png";
+  }
+  let reinicioSelect = document.getElementById('seleccion').value = "";
+  let txtResultado = document.getElementById('resultado');
+  txtResultado.innerHTML = " ";
+  let txtAcierto = document.getElementById('acierto');
+  txtAcierto.innerHTML = "Acierto: ";
+  let txtError = document.getElementById('error');
+  txtError.innerHTML = "Errores: ";
 }
 
 //QUEDA SABER CUANDO GANAS Y CUANDO PERDES, LUEGO REINICIAR TODOS LOS VALORES PARA QUE COMIENCE DE CERO
