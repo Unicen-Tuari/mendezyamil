@@ -8,6 +8,12 @@
   <body>
     <header>
       <h1>JUEGO DE LA MEMORIA</h1>
+      <!-- <h2>Modo de juego</h2> -->
+      <select id="modoJuegoSl">
+        <option value="Simple">Simple</option>
+        <option value="Opcional">Opcional</option>
+      </select>
+      <input type="number" id="tiempo" value="1000">
       <button id="btncomienzo" type="button" name="btncomienzo">Comenzar juego</button>
     </header>
     <main>
@@ -31,19 +37,36 @@
           </tr>
         </tbody>
       </table>
-      <h2>Elija un numero de casillero donde considere que se encuentre:</h2>
-      <select id="seleccion" name="eleccionUsuario">
-        <option value=""></option>
-        <option value="0">Carta 1</option>
-        <option value="1">Carta 2</option>
-        <option value="2">Carta 3</option>
-        <option value="3">Carta 4</option>
-        <option value="4">Carta 5</option>
-      </select>
-      <p id="acierto">Aciertos:</p>
-      <p id="error">Errores:</p>
-      <p id="resultado"></p>
     </main>
+    <footer>
+      <div class="contenedor">
+        <div class="seleccionCartas">
+          <h2>Elija un numero de casillero donde considere que se encuentre:</h2>
+          <select id="seleccion" name="eleccionUsuario">
+            <option value=""></option>
+            <option value="0">Carta 1</option>
+            <option value="1">Carta 2</option>
+            <option value="2">Carta 3</option>
+            <option value="3">Carta 4</option>
+            <option value="4">Carta 5</option>
+          </select>
+        </div>
+        <div class="resultados">
+          <p id="resultado"></p>
+          <p id="acierto">Aciertos:</p>
+          <p id="error">Errores:</p>
+        </div>
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>Numero de partidas</th>
+            <th>Aciertos/Errores</th>
+          </tr>
+        </thead>
+        <tbody id="resultadoPartida"></tbody>
+      </table>
+    </footer>
     <script type="text/javascript" src="js/juego.js"></script>
   </body>
 </html>

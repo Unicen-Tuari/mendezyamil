@@ -14,6 +14,61 @@ td img {
   width: 100%;
 }
 
+.seleccionCartas{
+  font-family: verdana;
+  font-size: 13px;
+  padding-left: 3%;
+  padding-bottom: 2%;
+  border: 2px solid #585858;
+  border-radius: 8px;
+  background-color: #D8D8D8;
+  margin-bottom: 1%;
+}
+
+#seleccion, #btncomienzo{
+  background-color: #5882FA;
+  width: 20%;
+  font-size: 20px;
+  border-radius: 5px;
+}
+
+#btncomienzo{
+  margin-bottom: 1%;
+}
+
+.resultados{
+  font-family: verdana;
+  font-size: 15px;
+  padding-left: 3%;
+  border: 2px solid  #585858;
+  border-radius: 8px;
+  background-color: #D8D8D8;
+}
+
+.resultados #resultado{
+  font-weight: bold;
+}
+
+footer tr th, footer tr td{
+  font-size: 20px;
+  text-align: center;
+}
+
+.contenedor{
+  float: left;
+  width: 65%;
+}
+
+footer table{
+  float: left;
+  width: 30%;
+  background-color: #D8D8D8;
+  border: 2px solid #585858;
+  border-radius: 8px;
+  margin-left: 2%;
+}
+
+
 /* main{
   visibility:hidden;
 } */
