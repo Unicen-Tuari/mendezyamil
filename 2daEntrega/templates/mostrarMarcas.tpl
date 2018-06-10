@@ -3,7 +3,7 @@
 <ul>
   {foreach from=$marcas item=marca}
   <li>
-    <a href="detalle/{$marcas['id_marca']}">{$marca['nombre']}</a>: {$marca['descripcion']}
+    <p>{$marca['nombre']}</p> {$marca['descripcion']}
   </li>
   {/foreach}
 </ul>

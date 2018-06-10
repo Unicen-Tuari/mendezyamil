@@ -3,7 +3,7 @@
 <ul>
   {foreach from=$autos item=auto}
     <li>
-      <a href="detalle/{$autos['id_auto']}">{$auto['nombre']}</a>: {$auto['modelo']}
+      <a href="detalle/{$auto['id_auto']}">{$auto['nombre']}</a>: {$auto['modelo']}
     </li>
     {/foreach}
 </ul>

@@ -23,10 +23,10 @@ class AutosController {
     $this->autosView->mostrarMarcas($marcas);
   }
 
-  // function mostrarDetalle($params = []){
-  //   $auto = $this->autosModel->obtenerAuto($params[0]);
-  //   $this->autosView->mostrarDetalle($auto);
-  // }
+  function mostrarDetalle($params = []){
+    $auto = $this->autosModel->obtenerAuto($params[0]);
+    $this->autosView->mostrarDetalle($auto[0]);
+  }
 }
 
 ?>

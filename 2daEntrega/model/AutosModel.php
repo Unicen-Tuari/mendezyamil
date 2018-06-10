@@ -12,13 +12,19 @@ class AutosModel{
   function obtenerAutos(){
     $consulta = $this->db->prepare("SELECT * FROM auto");
     $consulta->execute();
-    return $consulta->fetchAll();
+    return $consulta->fetchAll(PDO::FETCH_ASSOC);
   }
 
   function obtenerMarcas(){
     $consulta = $this->db->prepare("SELECT * FROM marca");
     $consulta->execute();
-    return $consulta->fetchAll();
+    return $consulta->fetchAll(PDO::FETCH_ASSOC);
+  }
+
+  function obtenerAuto($id_auto){
+    $consulta = $this->db->prepare("SELECT * from auto where id_auto=?");
+    $consulta->execute([$id_auto]);
+    return $consulta->fetchAll(PDO::FETCH_ASSOC);
   }
 }
 

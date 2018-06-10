@@ -19,6 +19,14 @@ class AutosView{
     $this->smarty->assign("marcas", $marcas);
     $this->smarty->display("mostrarMarcas.tpl");
   }
+
+  function mostrarDetalle($auto){
+    $this->smarty->assign("nombre", $auto['nombre']);
+    $this->smarty->assign("modelo", $auto['modelo']);
+    $this->smarty->assign("color", $auto['color']);
+    $this->smarty->assign("id_marca", $auto['id_marca']);
+    $this->smarty->display("mostrarDetalle.tpl");
+  }
 }
 
 ?>
