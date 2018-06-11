@@ -43,6 +43,16 @@ class AutosModel{
     $this->db->commit();
     return $this->db->lastInsertId();
   }
+
+  function deleteAuto($id_auto){
+    $consulta = $this->db->prepare("DELETE from auto where id_auto=?");
+    $consulta->execute([$id_auto]);
+  }
+
+  function deleteMarca($id_marca){
+    $consulta = $this->db->prepare("DELETE from marca where id_marca=?");
+    $consulta->execute([$id_marca]);
+  }
 }
 
 

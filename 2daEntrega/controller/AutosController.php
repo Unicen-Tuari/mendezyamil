@@ -56,6 +56,16 @@ class AutosController {
     $this->autosModel->insertarMarca($marca);
     PageHelpers::homePageMarcas();
   }
+
+  function borrarAuto($params = []){
+    $this->autosModel->deleteAuto($params[0]);
+    PageHelpers::homePageAutos();
+  }
+
+  function borrarMarca($params = []){
+    $this->autosModel->deleteMarca($params[0]);
+    PageHelpers::homePageMarcas();
+  }
 }
 
 ?>

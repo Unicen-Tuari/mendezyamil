@@ -11,6 +11,7 @@ $acciones = [
   "guardarauto" => "AutosController#guardarAuto",
   "guardarmarca" => "AutosController#guardarMarca",
   "borrar" => "AutosController#borrarAuto",
+  "borrarmarca" => "AutosController#borrarMarca",
   "detalle" => "AutosController#mostrarDetalle"
 ];
 ?>

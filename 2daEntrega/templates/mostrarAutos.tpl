@@ -4,6 +4,7 @@
   {foreach from=$autos item=auto}
     <li>
       <a href="detalle/{$auto['id_auto']}">{$auto['nombre']}</a>: {$auto['modelo']}
+      <a href="borrar/{$auto['id_auto']}">Eliminar</a>
     </li>
     {/foreach}
 </ul>
