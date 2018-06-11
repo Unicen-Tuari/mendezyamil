@@ -7,4 +7,5 @@
   </li>
   {/foreach}
 </ul>
+<a href="crearmarca">Crear Marca</a>
 {include file="footer.tpl"}

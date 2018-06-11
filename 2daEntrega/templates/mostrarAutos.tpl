@@ -7,4 +7,5 @@
     </li>
     {/foreach}
 </ul>
+<a href="crearauto">Crear Auto</a>
 {include file="footer.tpl"}

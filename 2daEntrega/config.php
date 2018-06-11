@@ -6,9 +6,11 @@ $acciones = [
   // "logout" => "LoginController#logout",
   "verautos" => "AutosController#mostrarAutos",
   "vermarcas" => "AutosController#mostrarMarcas",
-  "crear" => "AutosController#crearAutos",
-  "guardar" => "AutosController#guardarAutos",
-  "borrar" => "AutosController#borrarAutos",
+  "crearauto" => "AutosController#crearAuto",
+  "crearmarca" => "AutosController#crearMarca",
+  "guardarauto" => "AutosController#guardarAuto",
+  "guardarmarca" => "AutosController#guardarMarca",
+  "borrar" => "AutosController#borrarAuto",
   "detalle" => "AutosController#mostrarDetalle"
 ];
 ?>

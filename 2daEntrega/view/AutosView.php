@@ -27,6 +27,15 @@ class AutosView{
     $this->smarty->assign("id_marca", $auto['id_marca']);
     $this->smarty->display("mostrarDetalle.tpl");
   }
+
+  function mostrarCrearAuto($tipoMarcas){
+    $this->smarty->assign("tipoMarcas", $tipoMarcas);
+    $this->smarty->display("crearAuto.tpl");
+  }
+
+  function mostrarCrearMarca(){
+    $this->smarty->display("crearMarca.tpl");
+  }
 }
 
 ?>

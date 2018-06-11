@@ -27,6 +27,35 @@ class AutosController {
     $auto = $this->autosModel->obtenerAuto($params[0]);
     $this->autosView->mostrarDetalle($auto[0]);
   }
+
+  function crearAuto($params = []){
+    $tipoMarca = $this->autosModel->obtenerMarcas();
+    $this->autosView->mostrarCrearAuto($tipoMarca);
+  }
+
+  function crearMarca($params = []){
+    $this->autosView->mostrarCrearMarca();
+  }
+
+  function guardarAuto($params = []){
+    $auto = [
+      'nombre' => $_POST['nombre'],
+      'modelo' => $_POST['modelo'],
+      'color' => $_POST['color'],
+      'id_marca' => $_POST['id_marca'],
+    ];
+    $this->autosModel->insertarAuto($auto);
+    PageHelpers::homePageAutos();
+  }
+
+  function guardarMarca($params = []){
+    $marca = [
+      'nombre' => $_POST['nombre'],
+      'descripcion' => $_POST['descripcion'],
+    ];
+    $this->autosModel->insertarMarca($marca);
+    PageHelpers::homePageMarcas();
+  }
 }
 
 ?>
