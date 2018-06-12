@@ -5,6 +5,7 @@
   <li>
     <p>{$marca['nombre']}</p> {$marca['descripcion']}
     <a href="borrarmarca/{$marca['id_marca']}">Eliminar</a>
+    <a href="modificarmarca/{$marca['id_marca']}">Modificar</a>
   </li>
   {/foreach}
 </ul>

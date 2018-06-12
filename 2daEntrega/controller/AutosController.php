@@ -66,6 +66,39 @@ class AutosController {
     $this->autosModel->deleteMarca($params[0]);
     PageHelpers::homePageMarcas();
   }
+
+  function modificarAuto($params = []){
+    $mostrarTupla = $this->autosModel->obtenerAuto($params[0]);
+    $tipoMarca = $this->autosModel->obtenerMarcas();
+    $this->autosView->mostrarModificarAuto($mostrarTupla[0],$tipoMarca);
+  }
+
+  function updateAuto($params = []){
+    $autoModificado = [
+      'id_auto' => $_POST['id_auto'],
+      'nombre' => $_POST['nombre'],
+      'modelo' => $_POST['modelo'],
+      'color' => $_POST['color'],
+      'id_marca' => $_POST['id_marca']
+    ];
+    $this->autosModel->updateAuto($autoModificado);
+    PageHelpers::homePageAutos();
+  }
+
+  function modificarMarca($params = []){
+    $mostrarTupla = $this->autosModel->obtenerMarca($params[0]);
+    $this->autosView->mostrarModificarMarca($mostrarTupla[0]);
+  }
+
+  function updateMarca($params = []){
+    $marcaModificada = [
+      'id_marca' => $_POST['id_marca'],
+      'nombre' => $_POST['nombre'],
+      'descripcion' => $_POST['descripcion'],
+    ];
+    $this->autosModel->updateMarca($marcaModificada);
+    PageHelpers::homePageMarcas();
+  }
 }
 
 ?>

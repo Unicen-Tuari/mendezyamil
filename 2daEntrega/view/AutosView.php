@@ -36,6 +36,23 @@ class AutosView{
   function mostrarCrearMarca(){
     $this->smarty->display("crearMarca.tpl");
   }
+
+  function mostrarModificarAuto($auto, $tipoMarcas){
+    $this->smarty->assign("tipoMarcas", $tipoMarcas);
+    $this->smarty->assign("id_auto", $auto['id_auto']);
+    $this->smarty->assign("nombre", $auto['nombre']);
+    $this->smarty->assign("modelo", $auto['modelo']);
+    $this->smarty->assign("color", $auto['color']);
+    $this->smarty->assign("id_marca", $auto['id_marca']);
+    $this->smarty->display("modificarAuto.tpl");
+  }
+
+  function mostrarModificarMarca($marcas){
+    $this->smarty->assign("id_marca", $marcas['id_marca']);
+    $this->smarty->assign("nombre", $marcas['nombre']);
+    $this->smarty->assign("descripcion", $marcas['descripcion']);
+    $this->smarty->display("modificarMarca.tpl");
+  }
 }
 
 ?>

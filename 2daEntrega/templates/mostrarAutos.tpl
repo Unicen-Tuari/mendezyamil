@@ -5,6 +5,7 @@
     <li>
       <a href="detalle/{$auto['id_auto']}">{$auto['nombre']}</a>: {$auto['modelo']}
       <a href="borrar/{$auto['id_auto']}">Eliminar</a>
+      <a href="modificarauto/{$auto['id_auto']}">Modificar</a>
     </li>
     {/foreach}
 </ul>
