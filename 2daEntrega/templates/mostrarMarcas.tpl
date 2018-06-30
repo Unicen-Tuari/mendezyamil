@@ -9,7 +9,7 @@
   </li>
   {/foreach}
 </ul> -->
-<a id="crearmarca" href="crearauto" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Crear Marca</a>
+<a id="crearmarca" href="crearmarca" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Crear Marca</a>
 
 <ul class="list-group">
   {foreach from=$marcas item=marca}
