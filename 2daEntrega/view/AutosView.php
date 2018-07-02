@@ -17,7 +17,9 @@ class AutosView{
     $this->smarty->display("mostrarAutos.tpl");
   }
 
-  function mostrarMarcas($marcas){
+  function mostrarMarcas($marcas, $admin, $login){
+    $this->smarty->assign('login', $login);
+    $this->smarty->assign('admin', $admin);
     $this->smarty->assign("marcas", $marcas);
     $this->smarty->display("mostrarMarcas.tpl");
   }

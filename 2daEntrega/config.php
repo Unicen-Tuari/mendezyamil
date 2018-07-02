@@ -1,7 +1,7 @@
 <?php
 
 $acciones = [
-  "" => "AutosController#mostrarAutos",
+  "" => "IndexController#mostrarIndex",
   "login" => "LoginController#login",
   "loginvalidar" => "LoginController#validarLogin",
   "logout" => "LoginController#logout",

@@ -27,7 +27,14 @@ class AutosController {
 
   function mostrarMarcas($params = []){
     $marcas = $this->autosModel->obtenerMarcas();
-    $this->autosView->mostrarMarcas($marcas);
+    $admin = 0;
+    session_start();
+    $login = isset($_SESSION['admin']);
+    //verifica si la sesion esta iniciada
+    if ($login && $_SESSION['admin'] == 1){
+        $admin = 1;
+    }
+    $this->autosView->mostrarMarcas($marcas, $admin, $login);
   }
 
   function mostrarDetalle($params = []){

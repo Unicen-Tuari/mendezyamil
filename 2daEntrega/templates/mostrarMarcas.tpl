@@ -9,7 +9,14 @@
   </li>
   {/foreach}
 </ul> -->
+{if ($admin == 1)}
 <a id="crearmarca" href="crearmarca" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Crear Marca</a>
+{/if}
+{if !$login}
+  <a id="mostrarlogin" href="login" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Iniciar Sesión</a>
+{else}
+  <a href="logout" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Cerrar Sesión</a>
+{/if}
 
 <ul class="list-group">
   {foreach from=$marcas item=marca}
@@ -17,8 +24,10 @@
       <div>
         <h4 class="list-group-item">{$marca['nombre']}</h4>
         <p>{$marca['descripcion']}</p>
-        <a id="modificar" href="modificarmarca/{$marca['id_marca']}" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Modificar</a>
-        <a id="eliminar" href="borrarmarca/{$marca['id_marca']}" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Eliminar</a>
+        {if ($admin == 1)}
+          <a id="modificar" href="modificarmarca/{$marca['id_marca']}" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Modificar</a>
+          <a id="eliminar" href="borrarmarca/{$marca['id_marca']}" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Eliminar</a>
+        {/if}
       </div>
     </li>
   {/foreach}

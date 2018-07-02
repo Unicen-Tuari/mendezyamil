@@ -3,6 +3,7 @@
   require_once 'config.php';
   require_once "controller/AutosController.php";
   require_once "controller/LoginController.php";
+    require_once "controller/IndexController.php";
   require_once "helpers/pageHelpers.php";
   // require_once "controller/LoginController.php";
 
