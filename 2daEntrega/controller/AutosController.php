@@ -47,7 +47,14 @@ class AutosController {
   }
 
   function crearMarca($params = []){
-    $this->autosView->mostrarCrearMarca();
+    session_start();
+    if (isset($_SESSION['admin']) && $_SESSION['admin'] == 1){
+      $this->autosView->mostrarCrearMarca();
+      PageHelpers::homePageMarcas();
+    }
+    else {
+      PageHelpers::homePageLogin();
+    }
   }
 
   function guardarAuto($params = []){
@@ -71,19 +78,38 @@ class AutosController {
   }
 
   function borrarAuto($params = []){
-    $this->autosModel->deleteAuto($params[0]);
-    PageHelpers::homePageAutos();
+    session_start();
+    if (isset($_SESSION['admin']) && $_SESSION['admin'] == 1){
+      $this->autosModel->deleteAuto($params[0]);
+      PageHelpers::homePageAutos();
+    }
+    else {
+      PageHelpers::homePageLogin();
+    }
   }
 
   function borrarMarca($params = []){
-    $this->autosModel->deleteMarca($params[0]);
-    PageHelpers::homePageMarcas();
+    session_start();
+    if (isset($_SESSION['admin']) && $_SESSION['admin'] == 1){
+      $this->autosModel->deleteMarca($params[0]);
+      PageHelpers::homePageMarcas();
+    }
+    else {
+      PageHelpers::homePageLogin();
+    }
+
   }
 
   function modificarAuto($params = []){
-    $mostrarTupla = $this->autosModel->obtenerAuto($params[0]);
-    $tipoMarca = $this->autosModel->obtenerMarcas();
-    $this->autosView->mostrarModificarAuto($mostrarTupla[0],$tipoMarca);
+    session_start();
+    if (isset($_SESSION['admin']) && $_SESSION['admin'] == 1){
+      $mostrarTupla = $this->autosModel->obtenerAuto($params[0]);
+      $tipoMarca = $this->autosModel->obtenerMarcas();
+      $this->autosView->mostrarModificarAuto($mostrarTupla[0],$tipoMarca);
+    }
+    else {
+      PageHelpers::homePageLogin();
+    }
   }
 
   function updateAuto($params = []){
@@ -99,8 +125,14 @@ class AutosController {
   }
 
   function modificarMarca($params = []){
-    $mostrarTupla = $this->autosModel->obtenerMarca($params[0]);
-    $this->autosView->mostrarModificarMarca($mostrarTupla[0]);
+    session_start();
+    if (isset($_SESSION['admin']) && $_SESSION['admin'] == 1){
+      $mostrarTupla = $this->autosModel->obtenerMarca($params[0]);
+      $this->autosView->mostrarModificarMarca($mostrarTupla[0]);
+    }
+    else {
+      PageHelpers::homePageLogin();
+    }
   }
 
   function updateMarca($params = []){
