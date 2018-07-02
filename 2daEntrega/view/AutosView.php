@@ -10,7 +10,9 @@ class AutosView{
     $this->smarty = new Smarty();
   }
 
-  function mostrarAutos($autos){
+  function mostrarAutos($autos, $admin, $login){
+    $this->smarty->assign('login', $login);
+    $this->smarty->assign('admin', $admin);
     $this->smarty->assign("autos", $autos);
     $this->smarty->display("mostrarAutos.tpl");
   }

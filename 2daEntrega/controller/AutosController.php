@@ -15,7 +15,14 @@ class AutosController {
 
   function mostrarAutos($params = []){
     $autos = $this->autosModel->obtenerAutos();
-    $this->autosView->mostrarAutos($autos);
+    $admin = 0;
+    session_start();
+    $login = isset($_SESSION['admin']);
+    //verifica si la sesion esta iniciada
+    if ($login && $_SESSION['admin'] == 1){
+        $admin = 1;
+    }
+    $this->autosView->mostrarAutos($autos, $admin, $login);
   }
 
   function mostrarMarcas($params = []){
@@ -29,8 +36,14 @@ class AutosController {
   }
 
   function crearAuto($params = []){
-    $tipoMarca = $this->autosModel->obtenerMarcas();
-    $this->autosView->mostrarCrearAuto($tipoMarca);
+    session_start();
+    if (isset($_SESSION['admin']) && $_SESSION['admin'] == 1){
+      $tipoMarca = $this->autosModel->obtenerMarcas();
+      $this->autosView->mostrarCrearAuto($tipoMarca);
+    }
+    else {
+      PageHelpers::homePageLogin();
+    }
   }
 
   function crearMarca($params = []){

@@ -9,15 +9,24 @@
     </li>
     {/foreach}
 </ul> -->
-<a id="crearAuto" href="crearauto" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Crear Auto</a>
+{if ($admin == 1)}
+  <a id="crearAuto" href="crearauto" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Crear Auto</a>
+{/if}
+{if !$login}
+  <a id="mostrarlogin" href="login" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Iniciar Sesión</a>
+{else}
+  <a href="logout" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Cerrar Sesión</a>
+{/if}
 
 <ul class="list-group">
   {foreach from=$autos item=auto}
     <li>
       <div>
         <a id="info" href="detalle/{$auto['id_auto']}" class="list-group-item">{$auto['nombre']}: {$auto['modelo']}</a>
-        <a id="modificar" href="modificarauto/{$auto['id_auto']}" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Modificar</a>
-        <a id="eliminar" href="borrar/{$auto['id_auto']}" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Eliminar</a>
+        {if ($admin == 1)}
+          <a id="modificar" href="modificarauto/{$auto['id_auto']}" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Modificar</a>
+          <a id="eliminar" href="borrar/{$auto['id_auto']}" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Eliminar</a>
+        {/if}
       </div>
     </li>
   {/foreach}

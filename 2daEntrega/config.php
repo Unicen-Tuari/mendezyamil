@@ -1,9 +1,10 @@
 <?php
 
 $acciones = [
-  // "" => "LoginController#login",
-  // "login" => "LoginController#validarLogin",
-  // "logout" => "LoginController#logout",
+  "" => "AutosController#mostrarAutos",
+  "login" => "LoginController#login",
+  "loginvalidar" => "LoginController#validarLogin",
+  "logout" => "LoginController#logout",
   "verautos" => "AutosController#mostrarAutos",
   "vermarcas" => "AutosController#mostrarMarcas",
   "crearauto" => "AutosController#crearAuto",

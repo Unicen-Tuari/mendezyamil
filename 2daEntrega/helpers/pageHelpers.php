@@ -11,6 +11,11 @@ class PageHelpers{
     header("Location: ".BASEURL."vermarcas");
     die();
   }
+
+  public static function homePageLogin(){
+    header("Location: ".BASEURL."login");
+    die();
+  }
 }
 
 ?>
