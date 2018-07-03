@@ -1,4 +1,15 @@
 {include file="header.tpl"}
+<h1>MENDEZ AUTOMOTORES</h1>
+<nav class="nav nav-pills nav-justified">
+  <a class="nav-link" href="./">Inicio</a>
+  <a class="nav-link" href="verautos">Autos</a>
+  <a class="nav-link active" href="vermarcas">Marcas</a>
+  {if !$login}
+    <a class="nav-link" href="login">Iniciar Sesión</a>
+  {else}
+    <a class="nav-link" href="logout">Cerrar Sesión</a>
+  {/if}
+</nav>
 <h1>Lista de Marcas</h1>
 <!-- <ul>
   {foreach from=$marcas item=marca}
@@ -11,11 +22,6 @@
 </ul> -->
 {if ($admin == 1)}
 <a id="crearmarca" href="crearmarca" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Crear Marca</a>
-{/if}
-{if !$login}
-  <a id="mostrarlogin" href="login" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Iniciar Sesión</a>
-{else}
-  <a href="logout" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Cerrar Sesión</a>
 {/if}
 
 <ul class="list-group">

@@ -7,6 +7,7 @@
   {if !$login}
     <a class="nav-link" href="login">Iniciar Sesión</a>
   {else}
+    <a class="nav-link active">Hola {$nombre}!</a>
     <a class="nav-link" href="logout">Cerrar Sesión</a>
   {/if}
 </nav>
