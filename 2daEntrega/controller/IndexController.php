@@ -11,7 +11,9 @@ class IndexController {
   }
 
   function mostrarIndex($params = []){
-    $this->indexView->mostrarIndex();
+    session_start();
+    $login = isset($_SESSION['admin']);
+    $this->indexView->mostrarIndex($login);
   }
-} 
+}
 ?>

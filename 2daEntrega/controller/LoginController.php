@@ -21,7 +21,7 @@ class LoginController {
   {
     session_start();
     session_destroy();
-    PageHelpers::homePageAutos();
+    PageHelpers::homePage();
   }
 
   function validarLogin($params = [])
@@ -34,10 +34,10 @@ class LoginController {
       $_SESSION['usuario'] = $usuario['usuario'];
       $_SESSION['admin'] = $usuario['admin'];
       //$_SESSION['ultima_conexion'] = time();
-      PageHelpers::homePageAutos();
+      PageHelpers::homePage();
     }
     else {
-      PageHelpers::homePageAutos();
+      PageHelpers::homePage();
     }
   }
 }

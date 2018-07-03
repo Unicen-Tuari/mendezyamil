@@ -8,7 +8,8 @@ class IndexView {
     $this->smarty = new Smarty;
   }
 
-  function mostrarIndex(){
+  function mostrarIndex($login){
+    $this->smarty->assign('login', $login);
     $this->smarty->display("index.tpl");
   }
 }
