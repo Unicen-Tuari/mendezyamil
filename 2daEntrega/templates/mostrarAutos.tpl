@@ -4,6 +4,9 @@
   <a class="nav-link" href="./">Inicio</a>
   <a class="nav-link active" href="verautos">Autos</a>
   <a class="nav-link" href="vermarcas">Marcas</a>
+  {if ($admin == 1)}
+    <a class="nav-link" href="verusuarios">Usuarios</a>
+  {/if}
   {if !$login}
     <a class="nav-link" href="login">Iniciar Sesión</a>
   {else}

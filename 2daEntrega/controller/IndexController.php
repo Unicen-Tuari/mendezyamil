@@ -15,13 +15,14 @@ class IndexController {
 
   function mostrarIndex($params = []){
     $nombre = '';
+    $admin = 0;
     session_start();
     $login = isset($_SESSION['admin']);
-    // if ($login){
-    //   $usuario = $_POST['usuario'];
-    //   $nombre = $this->indexModel->obtenerNombre($usuario);
-    // }
-    $this->indexView->mostrarIndex($login, $nombre);
+    //verifica si la sesion esta iniciada
+    if ($login && $_SESSION['admin'] == 1){
+        $admin = 1;
+    }
+    $this->indexView->mostrarIndex($login, $nombre, $admin);
   }
 }
 ?>

@@ -57,5 +57,17 @@ class LoginController {
     $this->loginModel->insertarUsuario($usuario);
     PageHelpers::homePage();
   }
+
+  function mostrarUsuarios($params = []){
+    $usuarios = $this->loginModel->obtenerUsuarios();
+    $admin = 0;
+    session_start();
+    $login = isset($_SESSION['admin']);
+    //verifica si la sesion esta iniciada
+    if ($login && $_SESSION['admin'] == 1){
+        $admin = 1;
+    }
+    $this->loginView->mostrarUsuarios($usuarios, $login, $admin);
+  }
 }
 ?>

@@ -9,6 +9,7 @@ $acciones = [
   "guardarusuario" => "LoginController#guardarUsuario",
   "verautos" => "AutosController#mostrarAutos",
   "vermarcas" => "AutosController#mostrarMarcas",
+  "verusuarios" => "LoginController#mostrarUsuarios",
   "crearauto" => "AutosController#crearAuto",
   "crearmarca" => "AutosController#crearMarca",
   "guardarauto" => "AutosController#guardarAuto",

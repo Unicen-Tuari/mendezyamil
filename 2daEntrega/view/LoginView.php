@@ -12,6 +12,13 @@ class LoginView {
     $this->smarty->display("login.tpl");
   }
 
+  function mostrarUsuarios($usuarios, $login, $admin){
+    $this->smarty->assign('login', $login);
+    $this->smarty->assign('admin', $admin);
+    $this->smarty->assign("usuarios", $usuarios);
+    $this->smarty->display("mostrarUsuarios.tpl");
+  }
+
   function mostrarCrearUsuario(){
     $this->smarty->display("crearUsuario.tpl");
   }
