@@ -64,7 +64,7 @@ class AutosController {
     }
   }
 
-  function guardarAuto($params = []){
+  function guardarauto($params = []){
     $auto = [
       'nombre' => $_POST['nombre'],
       'modelo' => $_POST['modelo'],

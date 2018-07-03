@@ -11,6 +11,10 @@ class LoginView {
   function mostrarLogin(){
     $this->smarty->display("login.tpl");
   }
+
+  function mostrarCrearUsuario(){
+    $this->smarty->display("crearUsuario.tpl");
+  }
 }
 
 ?>

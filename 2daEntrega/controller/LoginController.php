@@ -40,5 +40,22 @@ class LoginController {
       PageHelpers::homePage();
     }
   }
+
+  function crearUsuario($params = [])
+  {
+    $this->loginView->mostrarCrearUsuario();
+  }
+
+  function guardarusuario($params = []){
+    $usuario = [
+      'nombre' => $_POST['nombre'],
+      'apellido' => $_POST['apellido'],
+      'usuario' => $_POST['usuario'],
+      'password' => password_hash($_POST['password'], PASSWORD_DEFAULT),
+      'admin' => 0,
+    ];
+    $this->loginModel->insertarUsuario($usuario);
+    PageHelpers::homePage();
+  }
 }
 ?>

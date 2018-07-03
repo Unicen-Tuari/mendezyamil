@@ -13,5 +13,13 @@ class LoginModel{
     $consulta->execute([$usuario]);
     return $consulta->fetch(PDO::FETCH_ASSOC);
   }
+
+  function insertarUsuario($usuario){
+    $this->db->beginTransaction();
+    $consulta = $this->db->prepare("INSERT INTO usuario (nombre, apellido, usuario, password, admin) VALUES (?,?,?,?,?)");
+    $consulta->execute([$usuario['nombre'], $usuario['apellido'], $usuario['usuario'], $usuario['password'], $usuario['admin']]);
+    $this->db->commit();
+    return $this->db->lastInsertId();
+  }
 }
 ?>

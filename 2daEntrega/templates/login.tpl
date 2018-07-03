@@ -9,5 +9,6 @@
     <input name="pass" type="password" class="form-control" id="exampleInputPassword1" placeholder="Contraseña">
   </div>
   <button type="submit" class="btn btn-primary">Ingresar</button>
+  <a class="nav-link" href="registrar">Registrarse.</a>
 </form>
 {include file="footer.tpl"}

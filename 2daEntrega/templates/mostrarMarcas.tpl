@@ -21,7 +21,7 @@
   {/foreach}
 </ul> -->
 {if ($admin == 1)}
-<a id="crearmarca" href="crearmarca" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Crear Marca</a>
+<a id="crearmarca" href="./crearmarca" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Crear Marca</a>
 {/if}
 
 <ul class="list-group">
