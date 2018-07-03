@@ -33,6 +33,7 @@ class LoginController {
       //se guarda en la variable del server para almacenar los datos del usuario
       $_SESSION['usuario'] = $usuario['usuario'];
       $_SESSION['admin'] = $usuario['admin'];
+      $_SESSION['id'] = $usuario['id_usuario'];
       //$_SESSION['ultima_conexion'] = time();
       PageHelpers::homePage();
     }
@@ -68,6 +69,41 @@ class LoginController {
         $admin = 1;
     }
     $this->loginView->mostrarUsuarios($usuarios, $login, $admin);
+  }
+
+  function borrarUsuario($params = []){
+    session_start();
+    if (isset($_SESSION['admin']) && $_SESSION['admin'] == 1){
+      $this->loginModel->deleteUsuario($params[0]);
+      PageHelpers::homePageUsuarios();
+    }
+    else {
+      PageHelpers::homePageLogin();
+    }
+  }
+
+  function modificarUsuario($params = []){
+    session_start();
+    if (isset($_SESSION['admin']) && $_SESSION['admin'] == 1){
+      $mostrarTupla = $this->loginModel->obtenerUsuarioPorId($params[0]);
+      $this->loginView->mostrarModificarUsuario($mostrarTupla);
+    }
+    else {
+      PageHelpers::homePageLogin();
+    }
+  }
+
+  function updateUsuario($params = []){
+    $usuarioModificado = [
+      'id_usuario' => $_POST['id_usuario'],
+      'nombre' => $_POST['nombre'],
+      'apellido' => $_POST['apellido'],
+      'usuario' => $_POST['usuario'],
+      'password' => $_POST['password'],
+      'admin' => $_POST['admin']
+    ];
+    $this->loginModel->updateUsuario($usuarioModificado);
+    PageHelpers::homePageUsuarios();
   }
 }
 ?>

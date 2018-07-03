@@ -9,7 +9,7 @@ class IndexModel{
   }
 
   function obtenerNombre($usuario){
-    $consulta = $this->db->prepare("SELECT nombre FROM usuario where usuario=? LIMIT 1");
+    $consulta = $this->db->prepare("SELECT nombre FROM usuario where id_usuario=? LIMIT 1");
     $consulta->execute([$usuario]);
     return $consulta->fetch(PDO::FETCH_ASSOC);
   }

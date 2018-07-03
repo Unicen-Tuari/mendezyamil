@@ -22,6 +22,16 @@ class LoginView {
   function mostrarCrearUsuario(){
     $this->smarty->display("crearUsuario.tpl");
   }
+
+  function mostrarModificarUsuario($usuario){
+    $this->smarty->assign("id_usuario", $usuario['id_usuario']);
+    $this->smarty->assign("nombre", $usuario['nombre']);
+    $this->smarty->assign("apellido", $usuario['apellido']);
+    $this->smarty->assign("usuario", $usuario['usuario']);
+    $this->smarty->assign("password", $usuario['password']);
+    $this->smarty->assign("admin", $usuario['admin']);
+    $this->smarty->display("modificarUsuario.tpl");
+  }
 }
 
 ?>

@@ -19,10 +19,13 @@ class IndexController {
     session_start();
     $login = isset($_SESSION['admin']);
     //verifica si la sesion esta iniciada
-    if ($login && $_SESSION['admin'] == 1){
+    if ($login){
+      if($_SESSION['admin'] == 1){
         $admin = 1;
+      }
+      $nombre = $this->indexModel->obtenerNombre($_SESSION['id']);
     }
-    $this->indexView->mostrarIndex($login, $nombre, $admin);
+    $this->indexView->mostrarIndex($login, $nombre['nombre'], $admin);
   }
 }
 ?>

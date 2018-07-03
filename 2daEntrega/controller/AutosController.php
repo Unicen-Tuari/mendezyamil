@@ -57,7 +57,6 @@ class AutosController {
     session_start();
     if (isset($_SESSION['admin']) && $_SESSION['admin'] == 1){
       $this->autosView->mostrarCrearMarca();
-      PageHelpers::homePageMarcas();
     }
     else {
       PageHelpers::homePageLogin();

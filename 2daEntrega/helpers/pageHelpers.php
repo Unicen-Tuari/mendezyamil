@@ -21,6 +21,11 @@ class PageHelpers{
     header("Location: ".BASEURL."");
     die();
   }
+
+  public static function homePageUsuarios(){
+    header("Location: ".BASEURL."verusuarios");
+    die();
+  }
 }
 
 ?>
