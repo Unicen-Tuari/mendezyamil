@@ -17,6 +17,11 @@ class PageHelpers{
     die();
   }
 
+  public static function homePageLogout(){
+    header("Location: ".BASEURL."logout");
+    die();
+  }
+
   public static function homePage(){
     header("Location: ".BASEURL."");
     die();

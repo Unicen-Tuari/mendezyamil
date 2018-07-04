@@ -37,8 +37,11 @@ class UsuariosController {
     //verifica si la sesion esta iniciada
     if ($login && $_SESSION['admin'] == 1){
         $admin = 1;
+        $this->usuariosView->mostrarUsuarios($usuarios, $login, $admin);
     }
-    $this->usuariosView->mostrarUsuarios($usuarios, $login, $admin);
+    else {
+      PageHelpers::homePageLogin();
+    }
   }
 
   function borrarUsuario($params = []){

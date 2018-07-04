@@ -1,16 +1,22 @@
 <?php
 require_once "./model/AutosModel.php";
 require_once "./view/AutosView.php";
+require_once "./model/MarcasModel.php";
+require_once "./view/MarcasView.php";
 
 class AutosController {
 
   private $autosModel;
   private $autosView;
+  private $marcasModel;
+  private $marcasView;
 
   function __construct()
   {
     $this->autosModel = new AutosModel();
     $this->autosView = new AutosView();
+    $this->marcasModel = new MarcasModel();
+    $this->marcasView = new MarcasView();
   }
 
   function mostrarAutos($params = []){
@@ -26,7 +32,7 @@ class AutosController {
   }
 
   function mostrarMarcas($params = []){
-    $marcas = $this->autosModel->obtenerMarcas();
+    $marcas = $this->marcasModel->obtenerMarcas();
     $admin = 0;
     session_start();
     $login = isset($_SESSION['admin']);
@@ -34,7 +40,7 @@ class AutosController {
     if ($login && $_SESSION['admin'] == 1){
         $admin = 1;
     }
-    $this->autosView->mostrarMarcas($marcas, $admin, $login);
+    $this->marcasView->mostrarMarcas($marcas, $admin, $login);
   }
 
   function mostrarDetalle($params = []){
@@ -45,7 +51,7 @@ class AutosController {
   function crearAuto($params = []){
     session_start();
     if (isset($_SESSION['admin']) && $_SESSION['admin'] == 1){
-      $tipoMarca = $this->autosModel->obtenerMarcas();
+      $tipoMarca = $this->marcasModel->obtenerMarcas();
       $this->autosView->mostrarCrearAuto($tipoMarca);
     }
     else {
@@ -56,7 +62,7 @@ class AutosController {
   function crearMarca($params = []){
     session_start();
     if (isset($_SESSION['admin']) && $_SESSION['admin'] == 1){
-      $this->autosView->mostrarCrearMarca();
+      $this->marcasView->mostrarCrearMarca();
     }
     else {
       PageHelpers::homePageLogin();
@@ -79,7 +85,7 @@ class AutosController {
       'nombre' => $_POST['nombre'],
       'descripcion' => $_POST['descripcion'],
     ];
-    $this->autosModel->insertarMarca($marca);
+    $this->marcasModel->insertarMarca($marca);
     PageHelpers::homePageMarcas();
   }
 
@@ -97,7 +103,7 @@ class AutosController {
   function borrarMarca($params = []){
     session_start();
     if (isset($_SESSION['admin']) && $_SESSION['admin'] == 1){
-      $this->autosModel->deleteMarca($params[0]);
+      $this->marcasModel->deleteMarca($params[0]);
       PageHelpers::homePageMarcas();
     }
     else {
@@ -110,7 +116,7 @@ class AutosController {
     session_start();
     if (isset($_SESSION['admin']) && $_SESSION['admin'] == 1){
       $mostrarTupla = $this->autosModel->obtenerAuto($params[0]);
-      $tipoMarca = $this->autosModel->obtenerMarcas();
+      $tipoMarca = $this->marcasModel->obtenerMarcas();
       $this->autosView->mostrarModificarAuto($mostrarTupla[0],$tipoMarca);
     }
     else {
@@ -133,8 +139,8 @@ class AutosController {
   function modificarMarca($params = []){
     session_start();
     if (isset($_SESSION['admin']) && $_SESSION['admin'] == 1){
-      $mostrarTupla = $this->autosModel->obtenerMarca($params[0]);
-      $this->autosView->mostrarModificarMarca($mostrarTupla[0]);
+      $mostrarTupla = $this->marcasModel->obtenerMarca($params[0]);
+      $this->marcasView->mostrarModificarMarca($mostrarTupla[0]);
     }
     else {
       PageHelpers::homePageLogin();
@@ -147,7 +153,7 @@ class AutosController {
       'nombre' => $_POST['nombre'],
       'descripcion' => $_POST['descripcion'],
     ];
-    $this->autosModel->updateMarca($marcaModificada);
+    $this->marcasModel->updateMarca($marcaModificada);
     PageHelpers::homePageMarcas();
   }
 }
