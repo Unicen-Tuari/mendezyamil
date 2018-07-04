@@ -37,7 +37,7 @@
                 <div class="col-md-4">
                   {if ($admin == 1)}
                     <a id="modificar" href="modificarauto/{$auto['id_auto']}" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Modificar</a>
-                    <a id="eliminar" href="borrar/{$auto['id_auto']}" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Eliminar</a>
+                    <a id="eliminar" href="borrarauto/{$auto['id_auto']}" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Eliminar</a>
                   {/if}
                 </div>
               </div>

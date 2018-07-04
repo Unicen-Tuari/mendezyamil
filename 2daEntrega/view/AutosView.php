@@ -17,11 +17,11 @@ class AutosView{
     $this->smarty->display("mostrarAutos.tpl");
   }
 
-  function mostrarDetalle($auto){
+  function mostrarDetalle($auto, $marca){
     $this->smarty->assign("nombre", $auto['nombre']);
     $this->smarty->assign("modelo", $auto['modelo']);
     $this->smarty->assign("color", $auto['color']);
-    $this->smarty->assign("id_marca", $auto['id_marca']);
+    $this->smarty->assign("id_marca", $marca);
     $this->smarty->display("mostrarDetalle.tpl");
   }
 

@@ -10,8 +10,14 @@
         <label for="exampleInputPassword1">Contraseña</label>
         <input name="pass" type="password" class="form-control" id="exampleInputPassword1" placeholder="Contraseña">
       </div>
-      <button type="submit" class="btn btn-primary">Ingresar</button>
-      <a class="nav-link" href="registrar">Registrarse.</a>
+      <div class="form-row">
+        <div class="form-group col-md-1">
+          <button type="submit" class="btn btn-primary">Ingresar</button>
+        </div>
+        <div class="form-group col-md-1">
+          <a class="nav-link" href="registrar">Registrarse.</a>
+        </div>
+      </div>
     </form>
   </div>
 </div>

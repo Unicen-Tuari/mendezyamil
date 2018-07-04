@@ -5,17 +5,19 @@
       <div class="form-row">
         <div class="form-group col-md-6">
           <label for="nombre">Nombre</label>
-          <input type="text" name="nombre" value="{$nombre}">
+          <input type="text" name="nombre" value="{$nombre}" class="form-control">
         </div>
         <div class="form-group col-md-6">
           <label for="modelo">Modelo</label>
-          <input type="text" name="modelo" value="{$modelo}">
+          <input type="text" name="modelo" value="{$modelo}" class="form-control">
         </div>
-        <div class="form-group">
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-6">
           <label for="color">Color</label>
-          <input type="text" name="color" value="{$color}">
+          <input type="text" name="color" value="{$color}" class="form-control">
         </div>
-        <div class="form-group col-md-4">
+        <div class="form-group col-md-6">
           <label for="marca">Marca</label>
           <select name="id_marca" id="inputState" class="form-control">
             {foreach from=$tipoMarcas item=$marca}

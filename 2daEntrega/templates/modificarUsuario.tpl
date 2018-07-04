@@ -5,23 +5,25 @@
       <div class="form-row">
         <div class="form-group col-md-6">
           <label for="nombre">Nombre</label>
-          <input type="text" name="nombre" value="{$nombre}">
+          <input type="text" name="nombre" value="{$nombre}"  class="form-control">
         </div>
         <div class="form-group col-md-6">
           <label for="apellido">Apellido</label>
-          <input type="text" name="apellido" value="{$apellido}">
+          <input type="text" name="apellido" value="{$apellido}"  class="form-control">
         </div>
-        <div class="form-group">
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-6">
           <label for="usuario">Usuario</label>
-          <input type="text" name="usuario" value="{$usuario}">
-        </div>
-        <div class="form-group">
+          <input type="text" name="usuario" value="{$usuario}"  class="form-control">
+          </div>
+          <div class="form-group col-md-3">
           <label for="password">Contraseña</label>
-          <input type="text" name="password" value="{$password}">
+          <input type="text" name="password" value="{$password}"  class="form-control">
         </div>
-        <div class="form-group col-md-4">
+        <div class="form-group col-md-3">
           <label for="admin">Permisos</label>
-          <select name="admin" id="inputState" class="form-control">
+          <select name="admin" id="inputState" class="form-control"  class="form-control">
             {if ($admin==0)}
               <option value="0" selected>Usuario</option>
               <option value="1">Administrador</option>

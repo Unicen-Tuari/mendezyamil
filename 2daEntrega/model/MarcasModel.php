@@ -10,7 +10,7 @@ class MarcasModel{
   }
 
   function obtenerMarcas(){
-    $consulta = $this->db->prepare("SELECT * FROM marca");
+    $consulta = $this->db->prepare("SELECT * FROM marca ORDER BY nombre");
     $consulta->execute();
     return $consulta->fetchAll(PDO::FETCH_ASSOC);
   }

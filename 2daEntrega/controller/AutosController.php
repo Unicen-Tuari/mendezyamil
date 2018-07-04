@@ -45,7 +45,9 @@ class AutosController {
 
   function mostrarDetalle($params = []){
     $auto = $this->autosModel->obtenerAuto($params[0]);
-    $this->autosView->mostrarDetalle($auto[0]);
+    $id_marca = $auto[0]['id_marca'];
+    $marca = $this->marcasModel->obtenerMarca($id_marca);
+    $this->autosView->mostrarDetalle($auto[0], $marca[0]['nombre']);
   }
 
   function crearAuto($params = []){
