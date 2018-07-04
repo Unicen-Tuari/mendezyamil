@@ -23,9 +23,10 @@ class IndexController {
       if($_SESSION['admin'] == 1){
         $admin = 1;
       }
-      $nombre = $this->indexModel->obtenerNombre($_SESSION['id']);
+      $dato = $this->indexModel->obtenerNombre($_SESSION['id']);
+      $nombre = $dato['nombre'];
     }
-    $this->indexView->mostrarIndex($login, $nombre['nombre'], $admin);
+    $this->indexView->mostrarIndex($login, $nombre, $admin);
   }
 }
 ?>
